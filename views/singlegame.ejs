@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project For Code Immersives</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <% include ./partial/header %> 
+
+        <div>
+        <% if (games) { %>
+            <p>Title :<%= games.title %> </p>
+            <p>Description :<%= games.description %> </p>
+            <p>YearReleased :<%= games.yearReleased%> </p>
+            <p>Playtime :<%= games.playtime %> </p>
+            <p><img width="500px"; height="500px"src="<%= games.image %>" alt=""></p>
+        <% } %>
+        </div>
+    </body>
+</html>

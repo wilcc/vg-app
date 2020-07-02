@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add-Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <%include. /partial/header %> 
+    <div>
+    </form>
+    <form class="form-addgame" action="/games/addgame" method="POST">
+      <h1 class="form-addgame-heading text-muted">Add New Game</h1>
+    
+      <input type="text" id="title" class="form-control" placeholder="Title" name = "title" required="" autofocus="">
+      <input type="text" id="description" class="form-control" placeholder="Description" name = "description" required="" autofocus="">
+      <input type="text" id="yearReleased" class="form-control" placeholder="Year Released" name = "yearReleased" required="" autofocus="">
+      <input type="text" id="playtime" class="form-control" placeholder="PlayTime" name = "playtime" required="">
+      <input type="text" id="image" class="form-control" placeholder="Image" name = "image" required="">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Add
+      </button>
+    </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+[
+    {
+    "title":"World of Warcraft",
+    "description":"Best MMORPG EVER",
+    "yearReleased":"2004",
+    "playtime":"999999",
+    "image":"/images/WOW.jpg",
+    "timestamp":""
+    },
+    {
+    "title":"Command and Conquer",
+    "description":"Best Strategy EVER",
+    "yearReleased":"1995",
+    "playtime":"888",
+    "image":"/images/c&c.jpeg",
+    "timestamp":""
+    },
+    {
+    "title":"CounterStrike",
+    "description":"Best Shooting EVER",
+    "yearReleased":"2000",
+    "playtime":"7777",
+    "image":"/images/counterStrike.jpg",
+    "timestamp":""
+    },
+    {
+    "title":"Need for Speed",
+    "description":"Best Racing EVER",
+    "yearReleased":"1994",
+    "playtime":"666666",
+    "image":"/images/need4speed.jpg",
+    "timestamp":""
+    },
+    {
+    "title":" MobileLegends",
+    "description":"First Mobile MOBA I played",
+    "yearReleased":"2016",
+    "playtime":"000000000",
+    "image":"/images/Mobilelegends.png",
+    "timestamp":""
+    }
+  
+]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Landing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../public/stylesheets/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <% include ./partial/header %> 
+
+        <h1>All Games</h1>
+        <% if (user.admin===true) { %>
+            <span style="color:black; padding-left:20px"><a style="color:blue;" href="/games/addgame">
+                Add New Game
+            </a>
+            </span>
+            <br>
+            
+            <br />
+            <a style="color:blue;"  href="/games/favoritegame">Show My Favorites</a>
+        </span>
+        <br>
+        <br>
+        <% if(games){games.forEach((foundGame)=>{%>
+            <div>
+                    <a  style="color:blue;" href="/games/addtofavorite/<%= foundGame._id %>">Favorite</a>/
+                    <a  style="color:blue;" href="/games/removefavorite/<%= foundGame._id %>">Remove Favorite</a>
+                    <a  style="color:blue;" href="/games/delete/<%= foundGame._id %>">delete</a>
+                <a href="/games/singlegame/<%=foundGame.title%>"><%= foundGame.title %> 
+                    <br />
+                    <img width=500px; height=500px; src= "<%= foundGame.image %>"></a>
+                </div>
+                <%})} %> 
+                <% }else { %> 
+                    <a style="color:blue;"  href="/games/favoritegame">Show My Favorites</a>
+                </span>
+                <br>
+                <br>
+                <% if(games){games.forEach((foundGame)=>{%>
+                    <div>
+                            <a  style="color:blue;" href="/games/addtofavorite/<%= foundGame._id %>">Favorite</a>
+                            <a  style="color:blue;" href="/games/removefavorite/<%= foundGame._id %>">Remove Favorite</a>
+
+                        <a href="/games/singlegame/<%=foundGame.title%>"><%= foundGame.title %> 
+                            <br />
+                            <img width=500px; height=500px; src= "<%= foundGame.image %>"></a>
+                        </div>
+                        <%})} %> 
+                <% } %> 
+    </body>
+</html>
