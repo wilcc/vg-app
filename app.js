@@ -49,6 +49,13 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.use((req,res,next)=>{
+  res.locals.user = req.user
+  res.locals.errors =req.flash('errors')
+  res.locals.success = req.flash('success')
+  next()
+})
+
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/games', gameRouter);

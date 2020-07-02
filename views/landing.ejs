@@ -8,7 +8,14 @@
     </head>
     <body>
         <% include ./partial/header %> 
+<% if(success.length>0) {%>
+    <span style="color:green">
+    <%=success%> <%}%></span>
 
+    <% if (errors.length>0) { %>
+        <span style="color:red">
+        <%=errors %> 
+        <% } %></span>
         <h1>All Games</h1>
         <% if (user.admin===true) { %>
             <span style="color:black; padding-left:20px"><a style="color:blue;" href="/games/addgame">

@@ -12,7 +12,12 @@
   </head>
   <body>
     <% include ./partial/header %> 
-
+    <% if (errors.length > 0 ) { %>
+      <%= errors %> 
+     <% } %>
+     <% if (success.length > 0 ) { %>
+      <%= success %> 
+     <% } %>
     <h1>All Games</h1>
 
     <% if(favorite){favorite.forEach((foundGame)=>{%>

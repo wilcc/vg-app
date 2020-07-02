@@ -21,12 +21,13 @@ router.get('/singlegame/:title', (req,res)=>{
 })
 router.get('/addtofavorite/:id', (req,res) => {
   User.findById(req.user._id).then((foundUser) => {
+        foundUser.favorite.push(req.params.id)
+        foundUser.save()
+        req.flash('success', `added to favorites`);
+        return res.redirect('/games')
+      }
 
-      foundUser.favorite.push(req.params.id)
-      foundUser.save()
-      req.flash('success', `added to favorites`);
-      return res.redirect('/games')
-  })
+  )
   
 }),
 router.get('/removefavorite/:id',(req,res)=>{
@@ -40,7 +41,8 @@ router.get('/removefavorite/:id',(req,res)=>{
   })
 })
 router.get('/delete/:id',(req,res)=>{
-  Game.findByIdAndDelete(req.params.id).then(res.redirect('/games')).catch((err)=>{
+  Game.findByIdAndDelete(req.params.id).then(
+    res.redirect('/games')).catch((err)=>{
     res.status(400).json({message:err})
   })
 })
